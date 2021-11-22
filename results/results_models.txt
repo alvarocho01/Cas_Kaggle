@@ -1,0 +1,11 @@
+----  Support Vector Machines  ----
+Parametres per defecte: {'C': 1.0, 'break_ties': False, 'cache_size': 200, 'class_weight': None, 'coef0': 0.0, 'decision_function_shape': 'ovr', 'degree': 3, 'gamma': 'scale', 'kernel': 'rbf', 'max_iter': -1, 'probability': True, 'random_state': None, 'shrinking': True, 'tol': 0.001, 'verbose': False}
+
+Score del model amb  0.5 :  0.6017619829774525
+Score del model amb  0.8 :  0.6226203807390818
+Score del model amb  0.7 :  0.6154803384768541
+
+Score promig amb k-fold =  2  :  0.6071830831009231
+Score promig amb k-fold =  3  :  0.60897525690991
+Score promig amb k-fold =  4  :  0.6111412115744175
+Score promig amb k-fold =  5  :  0.6131564869461563
