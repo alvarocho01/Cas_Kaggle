@@ -1,9 +1,7 @@
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
-import scipy.stats
 import seaborn as sns
-from sklearn.preprocessing import OrdinalEncoder
 
 
 def load_dataset(path):
