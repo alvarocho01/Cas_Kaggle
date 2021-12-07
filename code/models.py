@@ -5,8 +5,10 @@ from sklearn.linear_model import LogisticRegression
 from sklearn import svm
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import classification_report, accuracy_score, f1_score, recall_score, precision_score, precision_recall_curve, average_precision_score, roc_curve, auc
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import LeaveOneOut, cross_val_score
 from sklearn.linear_model import Perceptron
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV

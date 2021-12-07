@@ -13,7 +13,9 @@ def load_dataset(path):
     return dataset
 
 dataset = load_dataset("../dataset/bodyPerformance.csv")
-
+print(dataset[dataset.duplicated()])
+print(dataset.isnull().values.any())
+"""
 titles = dataset.columns.values
 values = dataset.values
 
@@ -23,7 +25,7 @@ title_x = titles
 title_x = np.delete(title_x, 11, 0)
 title_y = titles[11]
 
-"""
+
 
 desviaciones = np.std(values,axis=0)
 with open("../results/deviations.txt",'w') as d:
