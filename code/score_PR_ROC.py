@@ -34,7 +34,7 @@ title_x = np.delete(title_x, 11, 0)
 title_y = titles[11]
 
 n_clases = dataset["class"].nunique()
-
+print(n_clases)
 
 particions = [0.5, 0.8, 0.7]
 models = [svm.SVC(probability=True), KNeighborsClassifier(), DecisionTreeClassifier(), RandomForestClassifier(), LogisticRegression()]
