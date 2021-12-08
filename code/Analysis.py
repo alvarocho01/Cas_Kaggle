@@ -13,9 +13,28 @@ def load_dataset(path):
     return dataset
 
 dataset = load_dataset("../dataset/bodyPerformance.csv")
+"""
+n_clases = dataset["class"].nunique()
+values = dataset.values
+cont = 0
+for element in range(n_clases):
+    array = np.where(values[:,-1]==element)
+    print(np.asarray(array).size)
+    cont = cont + np.asarray(array).size
+print(cont)
+"""
+n_genere = dataset["gender"].nunique()
+values = dataset.values
+cont = 0
+for element in range(n_genere):
+    array = np.where(values[:,1]==element)
+    print(np.asarray(array).size)
+    cont = cont + np.asarray(array).size
+print(cont)
+"""
 print(dataset[dataset.duplicated()])
 print(dataset.isnull().values.any())
-"""
+
 titles = dataset.columns.values
 values = dataset.values
 
@@ -73,7 +92,7 @@ with open("../results/results_shapiro.txt",'w') as f:
         f.write("-----------------------------------------------------------------------------\n")
  
 
-"""
+
 correlacio = dataset.corr()
 plt.title("Correlacio")
 plt.figure(figsize=(8,8))
@@ -82,7 +101,7 @@ plt.savefig("../Grafiques/correlacio/correlacio.png")
 plt.clf()
 
 
-
+"""
 
 
 

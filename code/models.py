@@ -37,7 +37,7 @@ title_y = titles[11]
 
 n_clases = dataset["class"].nunique()
 
-
+"""
 particions = [0.5, 0.8, 0.7]
 models = [svm.SVC(probability=True), Perceptron(), KNeighborsClassifier(), DecisionTreeClassifier(), RandomForestClassifier(), LogisticRegression()]
 nom_models = ["Support Vector Machines", "Perceptron", "KNN", "Decision Tree", "Random Forest", "Logistic Regression"]
@@ -90,9 +90,9 @@ for i,model in enumerate(models):
     print("Els millors parametres: ",grid.best_params_)
     print("El millor score: ", grid.best_score_)
     print("")
-
-models = [svm.SVC(probability=True), KNeighborsClassifier(), DecisionTreeClassifier(), RandomForestClassifier(), LogisticRegression()]
-nom_models = ["Support Vector Machines", "KNN", "Decision Tree", "Random Forest", "Logistic Regression"]
+"""
+models = [svm.SVC(probability=True), Perceptron(), KNeighborsClassifier(), DecisionTreeClassifier(), RandomForestClassifier(), LogisticRegression()]
+nom_models = ["Support Vector Machines","Perceptron", "KNN", "Decision Tree", "Random Forest", "Logistic Regression"]
 
 for i,model in enumerate(models):
     #Generar corbes ROC i PR
