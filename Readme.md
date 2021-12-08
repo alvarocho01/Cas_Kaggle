@@ -25,9 +25,9 @@ He provat cinc models diferents i he buscat els millors hiperparàmetres de cada
 | Logistic Regression | 'C': 0.1 | 61.7% | xms |
 
 ## Conclusions
-Es pot dir que el nivell de salut d'una persona esta directament relacionat amb el pes, el percentatge de grassa corporal, els centímetres que es pot inclinar cap endevant estant assegut i el nombre d'abdominals que és capaç de fer.
-Hi ha una clara tendència a tenir pitjor salut si els resultats de les proves físiques son pitjors. En canvi, hi ha una tendència a tenir millor salut si el pes i el percentatge de grassa corporal és menor.
-A partir de les dades proporcionades, es pot veure com les persones de gènere femení tenen una millor salut que les persones de gènere masculí.
-Les dades estan representades en intervals molt diversos, tenint la necessitat de normalitzar-les per poder tractar-les correctament
-El millor model que classifica aquestes dades és el Random Forest, amb un score màxim de 74%.
-La cerca dels millors hiperparàmetres no ha millorat gaire el rendiment dels models. En concret, el Random Forest ha millorat solament un 1.6% respecte els valors per defecte.
+1. Es pot dir que el nivell de salut d'una persona esta directament relacionat amb el pes, el percentatge de grassa corporal, els centímetres que es pot inclinar cap endevant estant assegut i el nombre d'abdominals que és capaç de fer.
+2. Hi ha una clara tendència a tenir pitjor salut si els resultats de les proves físiques son pitjors. En canvi, hi ha una tendència a tenir millor salut si el pes i el percentatge de grassa corporal és menor.
+3. A partir de les dades proporcionades, es pot veure com les persones de gènere femení tenen una millor salut que les persones de gènere masculí.
+4. Les dades estan representades en intervals molt diversos, tenint la necessitat de normalitzar-les per poder tractar-les correctament
+5. El millor model que classifica aquestes dades és el Random Forest, amb un score màxim de 74%.
+6. La cerca dels millors hiperparàmetres no ha millorat gaire el rendiment dels models. En concret, el Random Forest ha millorat solament un 1.6% respecte els valors per defecte.
