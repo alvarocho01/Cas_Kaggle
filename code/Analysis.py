@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn as sns
-
+import scipy
 
 def load_dataset(path):
     dataset = pd.read_csv(path, header=0, delimiter=',')
@@ -13,7 +13,8 @@ def load_dataset(path):
     return dataset
 
 dataset = load_dataset("../dataset/bodyPerformance.csv")
-"""
+
+#Printar les dades de cada classe que hi ha per veure si estan desbalancejades
 n_clases = dataset["class"].nunique()
 values = dataset.values
 cont = 0
@@ -22,7 +23,8 @@ for element in range(n_clases):
     print(np.asarray(array).size)
     cont = cont + np.asarray(array).size
 print(cont)
-"""
+
+#Printar quantes dades hi ha de cada genere
 n_genere = dataset["gender"].nunique()
 values = dataset.values
 cont = 0
@@ -31,7 +33,8 @@ for element in range(n_genere):
     print(np.asarray(array).size)
     cont = cont + np.asarray(array).size
 print(cont)
-"""
+
+#Veure si hi ha valors duplicats i valors nuls
 print(dataset[dataset.duplicated()])
 print(dataset.isnull().values.any())
 
@@ -44,20 +47,17 @@ title_x = titles
 title_x = np.delete(title_x, 11, 0)
 title_y = titles[11]
 
-
-
+#Calcul de les desviacions de cada atribut
 desviaciones = np.std(values,axis=0)
 with open("../results/deviations.txt",'w') as d:
     for i, des in enumerate(desviaciones):
         d.write(titles[i] + " : " + str(des) + "\n")
         d.write("----------------------------\n")
 
-
-
 plt.figure()
 
 
-#Generem grafiques de dispersió i histogrames per tots els atributs d'entrada
+#Generar grafiques de dispersió i histogrames per tots els atributs d'entrada
 for i in range(x.shape[1]):
     sns.scatterplot(data=dataset, x=x[:,i], y=x[:,3], hue="class")
     plt.xlabel(title_x[i])
@@ -73,8 +73,9 @@ for i in range(x.shape[1]):
     plt.ylabel(title_x[i])
     plt.savefig("../Grafiques/violin_plot/" + str(i) + " "+ title_x[i] + ".png")
     plt.clf()
-"""    
-"""
+
+
+#Test de shapiro per veure la normalitat de les dades
 resultats = []
 for i in range(x.shape[1]):
     resultats.append(scipy.stats.shapiro(x[:,i]))
@@ -92,7 +93,7 @@ with open("../results/results_shapiro.txt",'w') as f:
         f.write("-----------------------------------------------------------------------------\n")
  
 
-
+#Generar taula de correlacio
 correlacio = dataset.corr()
 plt.title("Correlacio")
 plt.figure(figsize=(8,8))
@@ -101,7 +102,6 @@ plt.savefig("../Grafiques/correlacio/correlacio.png")
 plt.clf()
 
 
-"""
 
 
 

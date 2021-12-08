@@ -1,13 +1,4 @@
-BUSQUEDA EXHAUSTIVA DE PARAMETROS
-Fitting 5 folds for each of 60 candidates, totalling 300 fits
-[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
-[Parallel(n_jobs=-1)]: Done  16 tasks      | elapsed:   15.8s
-[Parallel(n_jobs=-1)]: Done 112 tasks      | elapsed:   21.0s
-[Parallel(n_jobs=-1)]: Done 272 tasks      | elapsed:   27.4s
-[Parallel(n_jobs=-1)]: Done 300 out of 300 | elapsed:   28.6s finished
-Els millors parametres:  {'alpha': 0.0001, 'fit_intercept': True, 'penalty': 'l1', 'shuffle': False}
-El millor score:  0.4993637901182015
-
+---kNN---
 BUSQUEDA EXHAUSTIVA DE PARAMETROS
 Fitting 5 folds for each of 36 candidates, totalling 180 fits
 [Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
@@ -17,6 +8,7 @@ Fitting 5 folds for each of 36 candidates, totalling 180 fits
 Els millors parametres:  {'metric': 'manhattan', 'n_neighbors': 13, 'weights': 'distance'}
 El millor score:  0.6363766143944228
 
+--Decision Tree---
 BUSQUEDA EXHAUSTIVA DE PARAMETROS
 Fitting 5 folds for each of 50 candidates, totalling 250 fits
 [Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
@@ -27,6 +19,7 @@ Fitting 5 folds for each of 50 candidates, totalling 250 fits
 Els millors parametres:  {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 5}
 El millor score:  0.6834156403036257
 
+---Random Forest---
 BUSQUEDA EXHAUSTIVA DE PARAMETROS
 Fitting 5 folds for each of 288 candidates, totalling 1440 fits
 [Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
@@ -40,6 +33,7 @@ Fitting 5 folds for each of 288 candidates, totalling 1440 fits
 Els millors parametres:  {'bootstrap': True, 'max_depth': 110, 'max_features': 3, 'min_samples_leaf': 3, 'min_samples_split': 8, 'n_estimators': 200}
 El millor score:  0.7406105797282045
 
+---Logistic Regression---
 BUSQUEDA EXHAUSTIVA DE PARAMETROS
 Fitting 5 folds for each of 7 candidates, totalling 35 fits
 [Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
