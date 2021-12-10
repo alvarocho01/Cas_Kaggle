@@ -36,23 +36,23 @@ title_y = titles[11]
 n_clases = dataset["class"].nunique()
 print(n_clases)
 
-particions = [0.5, 0.8, 0.7]
+resultats_kfold = []
 models = [svm.SVC(probability=True), KNeighborsClassifier(), DecisionTreeClassifier(), RandomForestClassifier(), LogisticRegression()]
 nom_models = ["Support Vector Machines", "KNN", "Decision Tree", "Random Forest", "Logistic Regression"]
 for i,model in enumerate(models):
     print("---- ", nom_models[i], " ----")
     print("Parametres per defecte: " + str(model.get_params()))
     print("")
-    for part in particions:
-        x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=part)
-        model.fit(x_train, y_train)
-        print("Score del model amb ", part, ": ", model.score(x_test, y_test))
-    print("")
-    for k in range(2,7):
-        scores = cross_val_score(model, x, y, cv=k)
-        print("Score promig amb k-fold = ", k, " : ", scores.mean())
+    scores = cross_val_score(model, x, y, cv=5)
+    resultats_kfold.append(scores.mean())
+    print("Score promig amb k-fold = ", 5, " : ", scores.mean())
     print("")
     
+plt.bar(nom_models, resultats_kfold)
+plt.xlabel("Model")
+plt.ylabel("K-Fold amb K=5")
+plt.title("Resultats k-fold")
+plt.show()
 
 for i,model in enumerate(models):
     #Generar corbes ROC i PR

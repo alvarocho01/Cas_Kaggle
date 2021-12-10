@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
 from sklearn import svm
 from sklearn.preprocessing import StandardScaler
@@ -32,7 +33,7 @@ title_y = titles[11]
 
 n_clases = dataset["class"].nunique()
 
-param_svm = {'C': [0.1,1, 10, 100], 'gamma': [1,0.1,0.01,0.001],'kernel': ['rbf', 'poly', 'sigmoid']}
+param_svm = {'kernel': ['rbf', 'poly', 'sigmoid']}
 param_knn = { 'n_neighbors' : [5,7,9,11,13,15],
                'weights' : ['uniform','distance'],
                'metric' : ['minkowski','euclidean','manhattan']}
@@ -64,3 +65,12 @@ for i,model in enumerate(models):
     print("Els millors parametres: ",grid.best_params_)
     print("El millor score: ", grid.best_score_)
     print("")
+
+resultats_hyperp = [0.6951391357168764, 0.6363766143944228, 0.6834156403036257, 0.7406105797282045, 0.6173365102011859]
+resultats_kfold = [0.6951391357168764, 0.5950126854485458, 0.6427980076834706, 0.7358319527227648, 0.6165155312765094]
+plt.bar(nom_models, resultats_hyperp)
+plt.bar(nom_models, resultats_kfold)
+plt.xlabel("Model")
+plt.ylabel("Score dels millors hiperparametres")
+plt.title("Score millors hiperparametres")
+plt.show()
