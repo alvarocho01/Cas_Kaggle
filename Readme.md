@@ -21,15 +21,18 @@ Per tal d'ajustar tots els atributs al mateix rang de dades, hauré de normalitz
 
 ## Model
 He provat cinc models diferents amb els seus paràmetres per defecte. He aplicat el k-fold amb k=5 i aquests són els seus rendiments:
-|Model||Mètrica|
+|Model|Mètrica|
 |--|--|
 | SVM | 0.6951 |
 | kNN | 0.5950 |
 | Decision Tree | 0.6427 |
 | Random Forest | 0.7358 |
 | Logistic Regression | 0.6165 |
+
 Es pot veure que el Random Forest és el model amb millors resultats.
+
 També he buscat els millors hiperparàmetres de cadascun. Aquests han estat els resultats:
+
 |Model|Hiperparàmetres|Mètrica|
 |--|--|--|
 | SVM | 'kernel': 'rbf' | 0.6951 |
@@ -37,6 +40,7 @@ També he buscat els millors hiperparàmetres de cadascun. Aquests han estat els
 | Decision Tree | 'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 5 | 0.6834 |
 | Random Forest | 'bootstrap': True, 'max_depth': 110, 'max_features': 3, 'min_samples_leaf': 3, 'min_samples_split': 8, 'n_estimators': 200 | 0.7406 |
 | Logistic Regression | 'C': 0.1 | 0.6173 |
+
 El rendiment dels models no ha incrementat gaire respecte els paràmetres per defecte. El millor resultat segueix sent el del Random Forest, amb un rendiment del 74%.
 
 ## Conclusions
