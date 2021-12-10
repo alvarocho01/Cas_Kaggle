@@ -95,3 +95,19 @@ for i,model in enumerate(models):
     plt.title(nom_models[i])
     plt.legend()
     plt.savefig("../Grafiques/corbes_ROC/curva-roc" + str(nom_models[i]) + ".png")
+
+#Generar grafica resultats corbes PR
+resultats_pr = [0.7325, 0.6, 0.5125, 0.7875, 0.6375]
+plt.bar(nom_models, resultats_pr)
+plt.xlabel("Model")
+plt.ylabel("Resultats PR")
+plt.title("Resultats PR")
+plt.show()
+
+#Generar grafica resultats corbes ROC
+resultats_roc = [0.895, 0.8225, 0.76, 0.915, 0.8525]
+plt.bar(nom_models, resultats_roc)
+plt.xlabel("Model")
+plt.ylabel("Resultats ROC")
+plt.title("Resultats ROC")
+plt.show()
